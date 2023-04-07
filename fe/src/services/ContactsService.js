@@ -1,12 +1,14 @@
-import delay from '../utils/delay';
+import HttpClient from './utils/HttpClient';
+
+const { REACT_APP_MY_CONTACTS_API } = process.env;
 
 class ContactsService {
+  constructor() {
+    this.httpClient = new HttpClient(REACT_APP_MY_CONTACTS_API);
+  }
+
   async listContacts(orderBy = 'asc') {
-    const response = await fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`);
-
-    await delay(500);
-
-    return response.json();
+    return this.httpClient.get(`/contacts?orderBy=${orderBy}`);
   }
 }
 
