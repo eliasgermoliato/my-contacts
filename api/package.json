@@ -1,0 +1,22 @@
+{
+  "name": "mycontacts",
+  "version": "1.0.0",
+  "description": "API to store contacts",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Elias Germoliato",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "nodemon": "^2.0.20",
+    "pg": "^8.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
+}
