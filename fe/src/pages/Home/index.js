@@ -12,6 +12,7 @@ import {
   Header, ListHeader, Card,
   ErrorContainer,
   EmptyListContainer,
+  SearchNotFoundContainer,
 } from './styles';
 
 import arrow from '../../assets/images/icons/arrow.svg';
@@ -19,6 +20,7 @@ import edit from '../../assets/images/icons/edit.svg';
 import trash from '../../assets/images/icons/trash.svg';
 import errorImage from '../../assets/images/error.svg';
 import emptyBox from '../../assets/images/empty-box.svg';
+import magnifierQuestion from '../../assets/images/magnifier-question.svg';
 
 import Loader from '../../components/Loader';
 import Button from '../../components/Button';
@@ -123,6 +125,16 @@ export default function Home() {
               o seu primeiro.
             </p>
           </EmptyListContainer>
+          )}
+
+          {!!(contacts.length && !filteredContacts.length) && (
+            <SearchNotFoundContainer>
+              <img src={magnifierQuestion} alt="Ícone de lupa" />
+
+              <span>
+                Nenhum resultado foi encontrado para <strong>&quot;{searchTerm}&quot;</strong>.
+              </span>
+            </SearchNotFoundContainer>
           )}
 
           {!!filteredContacts.length && (
