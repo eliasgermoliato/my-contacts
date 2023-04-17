@@ -105,7 +105,9 @@ export default function Home() {
         <ErrorContainer>
           <img src={errorImage} alt="Error" />
           <div className="error-details">
-            <span>Ocorreu um erro ao obter seus contatos!</span>
+            <span>
+              Ocorreu um erro ao obter seus contatos!
+            </span>
             <Button type="button" onClick={() => handleTryAgain()}>
               Tentar novamente
             </Button>
